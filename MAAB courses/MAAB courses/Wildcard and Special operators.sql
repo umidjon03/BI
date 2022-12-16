@@ -108,41 +108,154 @@ WHERE
   [name] LIKE '[^J-k]%'
 
 -- Exercise 9
+-- Write a SQL query to retrieve the details of the customers whose names begins
+-- with the letter 'B'.
 
-
+SELECT *
+FROM
+  [dbo].[customer]
+WHERE
+  [cust_name] LIKE 'B%'
 
 -- Exercise 10
+-- Write a SQL query to find the details of the customers whose names end with
+-- the letter 'n'.
 
-
+SELECT *
+FROM
+  [dbo].[customer]
+WHERE
+  [cust_name] LIKE '%N'
 
 -- Exercise 11
+-- Write a SQL query to find the details of those salespeople whose names begin
+-- with ‘N’ and the fourth character is 'l'. Rests may be any character.
 
-
+SELECT *
+FROM
+  [dbo].[salesman]
+WHERE
+  [name] LIKE 'N__L%'
 
 -- Exercise 12
+-- Write a SQL query to find those rows where col1 contains the escape
+-- character underscore ( _ ).
 
+CREATE TABLE [dbo].[testtable] (
+  [col1] CHAR(30)
+)
 
+INSERT INTO
+  [dbo].[testtable]
+VALUES
+  ('A001/DJ-402\44_/100/2015'),
+  ('A001_\DJ-402\44_/100/2015'),
+  ('A001_DJ-402-2014-2015'),
+  ('A002_DJ-401-2014-2015'),
+  ('A001/DJ_401'),
+  ('A001/DJ_402\44'),
+  ('A001/DJ_402\44\2015'),
+  ('A001/DJ-402%45\2015/200'),
+  ('A001/DJ_402\45\2015%100'),
+  ('A001/DJ_402%45\2015/300'),
+  ('A001/DJ-402\44')
+
+SELECT *
+FROM
+  [dbo].[testtable]
+WHERE
+  [col1] LIKE '%!_%' ESCAPE '!'
 
 -- Exercise 13
+-- Write a SQL query to identify those rows where col1 does not contain the
+-- escape character underscore ( _ ).
 
-
+SELECT *
+FROM
+  [dbo].[testtable]
+WHERE
+  [col1] NOT LIKE '%!_%' ESCAPE '!'
 
 -- Exercise 14
+-- Write a SQL query to find rows in which col1 contains the forward slash
+-- character ( / ).
 
-
-
+SELECT *
+FROM
+  [dbo].[testtable]             -- ESCAPE means that sign assigned after it is
+WHERE                           -- used to as a prefix of one char in order to
+  [col1] LIKE '%!/%' ESCAPE '!' -- ignore the wildcard operator. Its value is
+                                -- optional (can be "!", "/" OR "\")
 -- Exercise 15
+-- Write a SQL query to identify those rows where col1 does not contain the
+-- forward slash character ( / ).
 
-
+SELECT *
+FROM
+  [dbo].[testtable]
+WHERE
+  [col1] LIKE '%!/%' ESCAPE '!'
 
 -- Exercise 16
+-- Write a SQL query to find those rows where col1 contains the string ( _/ ).
 
-
+SELECT *
+FROM
+  [dbo].[testtable]
+WHERE
+  [col1] LIKE '%!_!/%' ESCAPE '!'
 
 -- Exercise 17
+-- Write a SQL query to find those rows where col1 does not contain the string ( _/ ).
 
-
+SELECT *
+FROM
+  [dbo].[testtable]
+WHERE
+  [col1] LIKE '%!_!/%' ESCAPE '!'
 
 -- Exercise 18
+-- Write a SQL query to find those rows where col1 contains the character percent ( % ).
 
+SELECT *
+FROM
+  [dbo].[testtable]
+WHERE
+  [col1] LIKE '%!%%' ESCAPE '!';
 
+-- Exercise 19
+-- Write a SQL query to find those rows where col1 does not contain the
+-- character percent ( % ).
+
+SELECT *
+FROM
+  [dbo].[testtable]
+WHERE
+  [col1] NOT LIKE '%!%%' ESCAPE '!';
+
+-- Exercise 20
+-- Write a SQL query to find all those customers who does not have any grade.
+
+SELECT *
+FROM
+  [dbo].[customer]
+WHERE
+  [grade] IS NULL
+
+-- Exercise 21
+-- rite a SQL query to locate all customers with a grade value.
+
+SELECT *
+FROM
+  [dbo].[customer]
+WHERE
+  [grade] IS NOT NULL
+
+-- Exercise 22
+-- Write a SQL query to locate the employees whose last name begins with the letter 'D'.
+
+SELECT *
+FROM
+  [dbo].[emp_details]
+WHERE
+  [EMP_LNAME] LIKE 'D%'
