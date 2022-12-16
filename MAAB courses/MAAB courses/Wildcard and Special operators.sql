@@ -1,5 +1,8 @@
+-- NOTE: Before execute this commands, execute the "pre data" file which located
+-- in the current folder to get the database and table which is used below
+
 -- Init
-USE TASK1
+USE [w3resource]
 GO
 
 -- Exercise 1
@@ -140,25 +143,6 @@ WHERE
 -- Exercise 12
 -- Write a SQL query to find those rows where col1 contains the escape
 -- character underscore ( _ ).
-
-CREATE TABLE [dbo].[testtable] (
-  [col1] CHAR(30)
-)
-
-INSERT INTO
-  [dbo].[testtable]
-VALUES
-  ('A001/DJ-402\44_/100/2015'),
-  ('A001_\DJ-402\44_/100/2015'),
-  ('A001_DJ-402-2014-2015'),
-  ('A002_DJ-401-2014-2015'),
-  ('A001/DJ_401'),
-  ('A001/DJ_402\44'),
-  ('A001/DJ_402\44\2015'),
-  ('A001/DJ-402%45\2015/200'),
-  ('A001/DJ_402\45\2015%100'),
-  ('A001/DJ_402%45\2015/300'),
-  ('A001/DJ-402\44')
 
 SELECT *
 FROM

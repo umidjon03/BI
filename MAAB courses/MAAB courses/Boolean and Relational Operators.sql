@@ -1,5 +1,8 @@
+-- NOTE: Before execute this commands, execute the "pre data" file which located
+-- in the current folder to get the database and table which is used below
+
 -- Init
-USE [TASK1]
+USE [w3resource]
 GO
 
 -- Exercise 1
