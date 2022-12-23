@@ -1,4 +1,4 @@
--- This scripts is to create and insert seed data for w3resource exercises
+-- These scripts is to create and insert seed data for w3resource exercises
 
 CREATE DATABASE [w3resource]
 GO
