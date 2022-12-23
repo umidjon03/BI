@@ -170,3 +170,20 @@ VALUES
   ('A001/DJ_402\45\2015%100'),
   ('A001/DJ_402%45\2015/300'),
   ('A001/DJ-402\44')
+
+-- Table "emp_department"
+
+CREATE TABLE [dbo].[emp_department] (
+  DPT_CODE  TINYINT,
+  DPT_NAME CHAR(20),
+  DPT_ALLOTMENT INT
+)
+
+INSERT INTO
+  [dbo].[emp_department]
+VALUES
+  (57, 'IT', 65000),
+  (63, 'Finance', 15000),
+  (47, 'HR', 240000),
+  (27, 'RD', 55000),
+  (89, 'QC', 75000)
